@@ -7,10 +7,12 @@
   --color-subtle-text: #8E8F99;
   --color-accent: #E7E9FC;
   --color-light: #F4F4FD;
-  --color-modal-overlay: #2E2F42;
-  --color-hero-background: #2E2F42;
+  --color-modal-overlay: rgba(46, 47, 66, 0.4);
+  --color-hero-background: rgba(46, 47, 66, 0.7);
   --color-white: #FFFFFF;
   --card-gap: 24px;
+
+
 }
 
 h1,
@@ -90,6 +92,11 @@ body {
   letter-spacing: 0.04em;
   cursor: pointer;
   border: none;
+}
+
+.section {
+  padding-top: 120px;
+  padding-bottom: 120px;
 }
 
 .section-title {
@@ -220,11 +227,6 @@ body {
 }
 
 /* Features */
-.features-section {
-  padding-top: 120px;
-  padding-bottom: 120px;
-}
-
 .features-list {
   display: flex;
   gap: 24px;
@@ -251,7 +253,7 @@ body {
 
 /* Services */
 .services-section {
-  padding-bottom: 120px;
+  padding-top: 0;
 }
 
 .services-list {
@@ -270,8 +272,6 @@ body {
 /* Team */
 .team-section {
   background-color: var(--color-light);
-  padding-top: 120px;
-  padding-bottom: 110px;
 }
 
 .team-list {
@@ -328,12 +328,6 @@ body {
 }
 
 /* Customers */
-
-.customers-section {
-  padding-top: 110px;
-  padding-bottom: 120px;
-}
-
 .customers-list {
   display: flex;
   justify-content: center;
@@ -367,7 +361,7 @@ body {
 
 /* Footer */
 .footer-section {
-  background-color: var(--color-hero-background);
+  background-color: var(--color-dark);
   padding-top: 100px;
   padding-bottom: 100px;
 }
@@ -388,6 +382,10 @@ body {
   color: var(--color-accent);
   max-width: 264px;
   margin-top: 16px;
+}
+
+.footer-social-media-wrap {
+  margin-right: 80px;
 }
 
 .media-text {
@@ -413,9 +411,56 @@ body {
   height: 24px;
 }
 
-/* Portfolio */
+.footer-form-field {
+  display: flex;
+  flex-direction: row;
+}
+
+.footer-form-title {
+  font-weight: 500;
+  color: var(--color-white);
+  margin-bottom: 16px;
+}
+
+.form-input-mail {
+  padding: 8px 16px;
+  margin-right: 24px;
+  min-width: 264px;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  border: 1px solid #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  background-color: transparent;
+
+}
+
+.form-input-mail::placeholder {
+  color: var(--color-white);
+}
+
+.footer-form-btn {
+  display: flex;
+  align-items: center;
+  padding: 8px 24px;
+  gap: 16px;
+  min-width: 165px;
+  background: var(--color-primary-brand);
+  border-radius: 4px;
+  color: var(--color-white);
+  border: none;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-form-btn:hover,
+.footer-form-btn:focus {
+  background-color: var(--color-pressed-state);
+}
+
+/*  =================== Portfolio =============================*/
 .portfolio-section {
-  padding-top: 96px;
+  padding-top: 100px;
   padding-bottom: 120px;
 }
 
@@ -513,7 +558,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(46, 47, 66, 0.4);
+  background-color: var(--color-modal-overlay);
   z-index: 100;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -532,6 +577,10 @@ body {
   max-width: 408px;
   width: 100%;
   height: 576px;
+  display: flex;
+  flex-direction: column;
+  padding: 72px 24px 24px;
+
   background-color: var(--color-white);
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
@@ -569,10 +618,135 @@ body {
   width: 8px;
   height: 8px;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
- 
+
 }
 
-.backdrop.is-hidden .modal{
+.backdrop.is-hidden .modal {
   transform: translate(-50%, -50%) scale(1.2);
 }
 
+/* Modal form */
+
+.modal-form-title {
+  margin-bottom: 16px;
+  font-weight: 500;
+  text-align: center;
+  color: var(--color-dark);
+
+}
+
+.modal-form-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8px;
+}
+
+.modal-form-label {
+  margin-bottom: 4px;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+  color: var(--color-subtle-text);
+}
+
+.modal-form-input {
+  padding: 8px 38px;
+  width: 100%;
+  height: 40px;
+  border: 1px solid rgba(46, 47, 66, 0.2);
+  border-radius: 4px;
+  color: var(--color-dark);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-form-input-wrap {
+  position: relative;
+}
+
+.modal-input-icon {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-form-input:focus {
+  border-color: var(--color-primary-brand);
+  outline: none;
+}
+
+.modal-form-input:focus+.modal-input-icon {
+  fill: var(--color-primary-brand);
+}
+
+.modal-text-area {
+  padding: 8px 16px;
+  width: 100%;
+  height: 120px;
+  resize: none;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  line-height: 1.17;
+  border: 1px solid var(--color-modal-overlay);
+  border: 1px solid rgba(46, 47, 66, 0.2);
+  border-radius: 4px;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-text-area:focus {
+  border-color: var(--color-primary-brand);
+  outline: none;
+}
+
+.modal-text-area::placeholder {
+  color: var(--color-modal-overlay);
+}
+
+.modal-check-label {
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: var(--color-subtle-text);
+}
+
+.modal-check-label::before {
+  content: '';
+  display: block;
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  border: 1px solid var(--color-dark);
+  border-radius: 2px;
+}
+
+
+.modal-form-checkbox:checked+.modal-check-label::before {
+  background-image: url(../images/form-checkbox.svg);
+  border: var(--color-pressed-state);
+}
+
+.modal-link {
+  color: var(--color-primary-brand);
+}
+
+.modal-send-btn {
+  display: block;
+  padding: 16px 32px;
+  margin: 0 auto;
+  min-width: 169px;
+  margin-top: 24px;
+  background: var(--color-primary-brand);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  color: var(--color-white);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-send-btn:hover,
+.modal-send-btn:focus {
+  background-color: var(--color-pressed-state);
+}
